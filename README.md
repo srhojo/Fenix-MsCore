@@ -14,11 +14,13 @@ That's are the core libraries for Fenix Microservice Architecture (FMA).
 
 ### Instalation <a name="instalation">
 * ####  Local <a name="local">
-```java
+
+```bash
     mvn clean install
 ```
 * #### Maven <a name="maven">
-```java
+
+```xml
 <!-- POM Parent -->
 <dependency>
     <groupId>io.github.srhojo.fenix</groupId>

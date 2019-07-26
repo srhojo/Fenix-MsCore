@@ -3,6 +3,7 @@ package io.github.srhojo.fenix.microservices;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import com.google.common.base.Predicates;
 
@@ -19,7 +20,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
-@ComponentScan(basePackages = "io.github.srhojo.*")
+@EnableAspectJAutoProxy
+@ComponentScan(basePackages = "io.github.srhojo.fenix.*")
 public class DefaultConfiguration {
 
     @Bean
