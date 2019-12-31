@@ -11,6 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Import;
 
@@ -22,11 +23,11 @@ import org.springframework.context.annotation.Import;
 @Documented
 @Retention(RUNTIME)
 @Target(TYPE)
-//@EnableHystrix
+@EnableHystrix
 @EnableEurekaClient
 @EnableCircuitBreaker
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = "io.github.srhojo.fenix.*.api")
+@EnableFeignClients(basePackages = "io.github.srhojo.fenix.*.clients")
 @Import({ DefaultConfiguration.class })
 @SpringBootApplication
 public @interface FenixMicroservice {

@@ -1,13 +1,13 @@
 package io.github.srhojo.fenix.microservices.exceptions;
 
-import org.springframework.http.HttpStatus;
-
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.springframework.http.HttpStatus;
 
 /**
  * @author hojo
- *
  */
 @ApiModel(value = "WarehouseException", description = "Custom Runtime exception")
 public class FenixException extends RuntimeException {
@@ -29,7 +29,14 @@ public class FenixException extends RuntimeException {
         this.details = details;
     }
 
-    public FenixException(final HttpStatus status, final String code, final Object details) {
+    /*public FenixException(final HttpStatus status, final String code, final Object details) {
+        this.status = status;
+        this.code = code;
+        this.details = details;
+    }*/
+
+    @JsonCreator
+    public FenixException(@JsonProperty("status") final HttpStatus status, @JsonProperty("code") final String code, @JsonProperty("details") final Object details) {
         this.status = status;
         this.code = code;
         this.details = details;
